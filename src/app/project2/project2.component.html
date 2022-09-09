@@ -1,0 +1,9 @@
+<h1 class="d-flex justify-content-center">Parant Child Relationship</h1>
+<div class="card">
+<h2>Parent</h2>
+<button class="btn btn-primary" (click)="onSendData()">Send Data to Child</button>
+</div>
+<br>
+<hr>
+<br>
+<app-child [childData]="childData"></app-child>

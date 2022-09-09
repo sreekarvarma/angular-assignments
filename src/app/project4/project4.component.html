@@ -1,0 +1,11 @@
+<h1 class="d-flex justify-content-center">Text area with character limit 50, When count is less than 30 sub-header color will change.</h1>
+
+<div class="card">
+    <textarea (input)="onChange($event)" [maxLength]="maxCharacterLimit" rows="2" class="form-control">
+
+    </textarea>
+
+    <p [style.color]="characterCount > 0 && characterCount < 30 ? 'red': 'black'">
+        Character remaining: {{characterCount}}/{{maxCharacterLimit}}
+    </p>
+</div>

@@ -1,0 +1,37 @@
+<h1 class="d-flex justify-content-center">Angular Games Viewer</h1>
+<div class="card">
+    <div *ngIf="selectedGameThumbRating>0">
+        <h2>Game List: {{selectedGameName}} has a {{selectedGameThumbRating}} rating!</h2>
+    </div> 
+
+    <table mat-table [dataSource]="sample_game_data">
+
+        <ng-container matColumnDef="gameName">
+            <th mat-header-cell *matHeaderCellDef> Game Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.gameName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="part">
+            <th mat-header-cell *matHeaderCellDef> Part </th>
+            <td mat-cell *matCellDef="let element"> {{element.part}} </td>
+        </ng-container>
+        <ng-container matColumnDef="releaseDate">
+            <th mat-header-cell *matHeaderCellDef> Release Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.releaseDate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+        </ng-container>
+        <ng-container matColumnDef="thumbRating">
+            <th mat-header-cell *matHeaderCellDef> Thumb Rating </th>
+            <td mat-cell *matCellDef="let element"> 
+            <button mat-button (click)="onGameSelected(element.gameName, element.thumbRating)">
+                <span *ngFor="let thumb of getDummyArray(element.thumbRating)">👍</span>
+            </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

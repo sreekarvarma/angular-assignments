@@ -1,0 +1,10 @@
+[
+    {
+        "employeeNumber": 1111,
+        "employeeName": "Sreekar varma",
+        "projectAllocation": "Yes",
+        "email": "sreekar@logist.co.in",
+        "reportingManager": "Satya Sripathi",
+        "role": "SSE"
+    }
+]

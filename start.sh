@@ -1,0 +1,1 @@
+ng serve  &  json-server --watch src/assets/db.json --id employeeNumber

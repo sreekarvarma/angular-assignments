@@ -1,0 +1,12 @@
+<div class="container">
+    <h2 class="d-flex justify-content-center">Custom Pipe to filter by Name</h2>
+    <input type="text" placeholder="Search with name" [(ngModel)]="filterData">
+    <hr>
+    <ul class="list-group w-50">
+        <li class="list-group-item" *ngFor="let user of userData | filter:filterData: 'name' ">
+            <strong>{{ user.name }}</strong> |
+            {{ user.age }} |
+            {{ user.country }}
+        </li>
+    </ul>
+</div>
